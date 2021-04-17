@@ -164,8 +164,8 @@ func (e _error) Read(p []byte) (n int, err error) {
 	return
 }
 
-//writes to io.writer interface
-func (e _error) ReadToWriter(w io.Writer) (n int, err error) {
+//WriteToWriter writes to io.writer interface
+func (e _error) WriteToWriter(w io.Writer) (n int, err error) {
 	b, err := json.Marshal(e)
 
 	if err == nil {
