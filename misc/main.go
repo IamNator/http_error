@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"log"
 	"os"
 
@@ -15,5 +16,12 @@ func main() {
 		log.Println(err.Error())
 	}
 
+	log.Println(returnError("\nsome error"))
+
 	println("\n number of bytes written: ", n)
+
+}
+
+func returnError(er string) httperror.Error {
+	return httperror.New(errors.New(er))
 }

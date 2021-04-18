@@ -8,7 +8,8 @@ import (
 	"strconv"
 )
 
-type Error 
+//Error is a type
+type Error = _error
 
 //Error ...
 type _error struct {
