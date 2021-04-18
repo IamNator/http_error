@@ -8,6 +8,8 @@ import (
 	"strconv"
 )
 
+type Error 
+
 //Error ...
 type _error struct {
 	Code    int         `json:"code"`              //e.g 201, 200, 401
