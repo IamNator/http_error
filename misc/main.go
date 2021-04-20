@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	testEr := httperror.New(nil)
+	testEr := httperror.Default(nil)
 	print("\n error object: ")
 	n, err := testEr.WriteToWriter(os.Stdout)
 	if err != nil {
@@ -23,5 +23,5 @@ func main() {
 }
 
 func returnError(er string) httperror.Error {
-	return httperror.New(errors.New(er))
+	return httperror.Default(errors.New(er))
 }

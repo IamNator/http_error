@@ -8,6 +8,6 @@ import (
 )
 
 func TestReply(t *testing.T) {
-	testEr := httperror.New(nil)
+	testEr := httperror.Default(nil)
 	testEr.WriteToWriter(os.Stdout)
 }

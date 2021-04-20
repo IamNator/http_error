@@ -21,10 +21,10 @@ type _error struct {
 	Error   interface{} `json:"error,omitempty"`   //custom error
 }
 
-//New returns a new object
+//Default returns a new object
 //
 // status is false by default
-func New(err error) _error {
+func Default(err error) _error {
 
 	//Check for empty(nil) error
 	var msg string
@@ -35,6 +35,19 @@ func New(err error) _error {
 	}
 
 	return _error{Status: false, Err: err, Message: msg, Error: msg}
+}
+
+//New returns a new object
+//
+// status is false by default
+func New(code int, status bool, name string, Err error, msg string, Error interface{}) _error {
+	return _error{
+		Code:    code,
+		Status:  false,
+		Name:    name,
+		Err:     Err,
+		Message: msg,
+		Error:   Error}
 }
 
 /************************************SET FIELDS*********************************/
